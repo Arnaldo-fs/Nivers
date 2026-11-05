@@ -1,0 +1,20 @@
+{
+  "name": "Nivers",
+  "short_name": "Nivers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#140006",
+  "theme_color": "#140006",
+  "icons": [
+    {
+      "src": "/image/icon-nivers.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/image/icon-nivers.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

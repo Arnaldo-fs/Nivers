@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="image/icon-nivers.png">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="cabecalho-grupo">
+
+            <img id="logoGrupo" class="logo-titulo">
+            <h1 id="tituloGrupo"></h1>
+            <img id="btnGerenciar" class="icone-config" src="image/config.png" alt="Gerenciar">
+
+        </div>
+
+        <h2 id="tituloMes" style="display:none;"></h2>
+
+        <!-- ADICIONE AQUI -->
+        <div id="carregando">
+            Carregando aniversariantes do mês...
+        </div>
+
+        <div id="secaoFeitos">
+            <h2>✅ Já fizeram aniversário</h2>
+            <div id="feitos"></div>
+        </div>
+
+        <div id="secaoHoje">
+            <h2>🎂 Faz aniversário hoje</h2>
+            <div id="hoje"></div>
+        </div>
+
+        <div id="secaoProximos">
+            <h2>📅 Próximos aniversários</h2>
+            <div id="proximos"></div>
+        </div>
+        <br>
+        <button id="btnVoltar" class="botao-voltar">Voltar</button><br>
+    </div>
+    <div class="bolos">
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+    </div>
+    <!-- MODAL MENSAGEM DE ANIVERSÁRIO -->
+
+    <div id="modalMensagem" class="modal">
+
+        <div class="janela-modal">
+            <h2>
+                🎉 Mensagem de Aniversário sugerida:
+            </h2>
+
+            <textarea id="textoMensagem"></textarea>
+            <button id="btnCopiarMensagem">
+                Copiar mensagem
+            </button>
+            <button id="btnCancelarMensagem">
+                Cancelar
+            </button>
+        </div>
+
+    </div>
+    
+    <script type="module" src="grupo.js"></script>
+    <div id="mensagemSucesso" class="mensagem-sucesso">
+    </div>
+</body>
+
+</html>

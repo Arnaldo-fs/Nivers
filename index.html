@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="image/icon-nivers.png">
+</head>
+
+<body>
+    <div class="container">
+        <img src="image/logonivers.png" class="logo-login">
+        <input type="email" id="email" placeholder="E-mail">
+        <div class="campo-senha">
+            <input type="password" id="senha" placeholder="Senha">
+
+            <button type="button" id="btnOlho" aria-label="Mostrar senha">
+                <svg id="iconeOlho" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+            </button>
+        </div>
+        <button id="btnLogin">Entrar</button>
+
+        <p class="observacao">
+            <strong>Observação:</strong>
+        </p>
+
+        <ul class="observacao-lista">
+            <li>Android ou Web: Instale o Nivers na tela inicial, faça o primeiro login dentro do aplicativo instalado e
+                permita as notificações quando o App perguntar.</li>
+            <li>iPhone (iOS): Adicione o Nivers à tela inicial pelo Safari, faça o primeiro login dentro do aplicativo
+                instalado e permita as notificações quando o App perguntar.
+            </li>
+        </ul>
+
+        <p id="mensagemErroLogin"></p>
+        <p id="mensagem"></p>
+        <p id="mensagem"></p>
+        <button id="btnInstalar" class="btn-instalar" style="display:none;">
+            Instalar
+        </button>
+        <div class="rodape">
+            Desenvolvido por Arnaldo Silva 😊
+        </div>
+    </div>
+    <div class="bolos">
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+        <span>🎂</span>
+    </div>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js")
+                .then(() => console.log("Service Worker registrado"))
+                .catch((erro) => console.log("Erro Service Worker:", erro));
+        }
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

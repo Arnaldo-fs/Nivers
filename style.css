@@ -1,0 +1,1644 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #140006;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+
+input:focus {
+    transform: scale(1.05);
+    padding: 15px;
+    border-color: #2196f3;
+    outline: none;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.35);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #720035;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.card-aniversario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+}
+
+.card-aniversario strong {
+    font-size: 15px;
+}
+
+.card-aniversario span {
+    font-weight: bold;
+}
+
+.card-grupo {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.imagem-grupo {
+    position: absolute;
+    inset: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    animation: moverImagem 8s infinite ease-in-out,
+        corImagem 6s infinite ease-in-out;
+}
+
+.jovens-imagem {
+    background-image:
+        linear-gradient(to right,
+            transparent 40%,
+            rgba(0, 0, 0, 0.85) 75%),
+        url("image/jovens.png");
+}
+
+.banda-imagem {
+    background-image:
+        linear-gradient(to right,
+            transparent 40%,
+            rgba(0, 0, 0, 0.85) 75%),
+        url("image/banda.png");
+
+    background-position: center 50%;
+}
+
+.orquestra-imagem {
+    background-image:
+        linear-gradient(to right,
+            transparent 40%,
+            rgba(0, 0, 0, 0.85) 75%),
+        url("image/orquestra.png");
+
+    background-position: center 50%;
+}
+
+.coral-imagem {
+    background-image:
+        linear-gradient(to right,
+            transparent 40%,
+            rgba(0, 0, 0, 0.85) 75%),
+        url("image/coral.png");
+
+    background-position: center 50%;
+}
+
+.adolescentes-imagem {
+    background-image:
+        linear-gradient(to right,
+            transparent 40%,
+            rgba(0, 0, 0, 0.85) 75%),
+        url("image/adolescentes.png");
+
+    background-position: center 50%;
+}
+
+.irmas-imagem {
+    background-image:
+        linear-gradient(to right,
+            transparent 40%,
+            rgba(0, 0, 0, 0.85) 75%),
+        url("image/irmas.png");
+
+    background-position: center 50%;
+}
+
+@keyframes moverImagem {
+
+    0% {
+        background-position: 60% 20%;
+        background-size: 110%;
+    }
+
+    25% {
+        background-position: 30% 35%;
+        background-size: 115%;
+    }
+
+    50% {
+        background-position: 70% 15%;
+        background-size: 125%;
+    }
+
+    75% {
+        background-position: 25% 30%;
+        background-size: 115%;
+    }
+
+    100% {
+        background-position: 60% 20%;
+        background-size: 110%;
+    }
+
+}
+
+@keyframes corImagem {
+    0% {
+        filter: grayscale(100%);
+    }
+
+    50% {
+        filter: grayscale(0%);
+    }
+
+    100% {
+        filter: grayscale(100%);
+    }
+}
+
+.conteudo-grupo {
+    position: absolute;
+    left: 30px;
+    top: 80%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(255, 1, 140, 0.76);
+    padding: 12px 30px;
+    border-radius: 12px;
+}
+
+/* ==========================
+   LOGOS DOS GRUPOS PADRONIZADAS
+========================== */
+/* ==========================
+   LOGOS DOS GRUPOS
+========================== */
+
+.logo-grupo {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%) scale(1.4);
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    z-index: 3;
+}
+
+.mensagem-permissao {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 16px;
+    z-index: 999;
+    animation: subirMensagem 0.4s ease forwards;
+    text-align: center;
+    width: 85%;
+    max-width: 400px;
+}
+
+
+@keyframes subirMensagem {
+    from {
+        transform: translateX(-50%) translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.mensagem-permissao.sair {
+    animation: descerMensagem 0.4s ease forwards;
+}
+
+
+@keyframes descerMensagem {
+    from {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-50%) translateY(100px);
+        opacity: 0;
+    }
+}
+
+.card-aniversario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+.card-aniversario strong,
+.card-aniversario span {
+    display: block;
+}
+
+
+.card-aniversario strong {
+    font-weight: normal;
+}
+
+
+.card-aniversario span {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.info-aniversariante {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-aniversariante span {
+    font-size: 13px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* remove o negrito do nome */
+.card-aniversario strong {
+    font-weight: normal;
+}
+
+/* Já fizeram aniversário */
+#feitos .card-aniversario {
+    background: #d8f3dc;
+}
+
+/* Aniversário hoje */
+#hoje .card-aniversario {
+    background: #ff0080;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+#hoje .card-aniversario strong,
+#hoje .card-aniversario span {
+    font-weight: bold;
+}
+
+/* Próximos aniversários */
+#proximos .card-aniversario {
+    background: #bde0fe;
+}
+
+#hoje .card-aniversario {
+    animation: pulsarHoje 1.8s infinite ease-in-out;
+}
+
+@keyframes pulsarHoje {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#secaoFeitos,
+#secaoHoje {
+    margin-bottom: 70px;
+}
+
+#tituloGrupo {
+    margin: 0;
+}
+
+#nomeUsuario {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-weight: normal;
+}
+
+#nomeUsuario strong {
+    color: #ff0095;
+}
+
+.bolos {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bolos span {
+    position: absolute;
+    font-size: 45px;
+    opacity: 0.45;
+    animation: movimentoBolo linear infinite;
+}
+
+/* posições diferentes */
+.bolos span:nth-child(1) {
+    left: 5%;
+    top: 80%;
+    animation-duration: 14s;
+}
+
+.bolos span:nth-child(2) {
+    left: 20%;
+    top: 20%;
+    animation-duration: 18s;
+}
+
+.bolos span:nth-child(3) {
+    left: 40%;
+    top: 70%;
+    animation-duration: 16s;
+}
+
+.bolos span:nth-child(4) {
+    left: 60%;
+    top: 30%;
+    animation-duration: 20s;
+}
+
+.bolos span:nth-child(5) {
+    left: 80%;
+    top: 75%;
+    animation-duration: 15s;
+}
+
+.bolos span:nth-child(6) {
+    left: 90%;
+    top: 10%;
+    animation-duration: 22s;
+}
+
+.bolos span:nth-child(7) {
+    left: 30%;
+    top: 50%;
+    animation-duration: 17s;
+}
+
+.bolos span:nth-child(8) {
+    left: 70%;
+    top: 55%;
+    animation-duration: 19s;
+}
+
+@keyframes movimentoBolo {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(80px, -120px) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(-100px, -250px) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(120px, -400px) rotate(270deg);
+    }
+
+    100% {
+        transform: translate(-50px, -600px) rotate(360deg);
+    }
+}
+
+.logo-login {
+    width: 180px;
+    display: block;
+    margin: 0 auto;
+    transform: scale(3);
+    position: relative;
+    z-index: 0;
+}
+
+input {
+    position: relative;
+    z-index: 2;
+}
+
+.logo-home {
+    width: 180px;
+    display: block;
+    margin: 0 auto;
+
+    transform: scale(3);
+    position: relative;
+    z-index: 0;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    .container {
+        width: 95%;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    input {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+
+    /* Logo login */
+    .logo-login {
+        width: 120px;
+        transform: scale(3.5);
+    }
+
+    /* Logo home */
+    .logo-home {
+        width: 120px;
+        transform: scale(3);
+    }
+
+    /* Cards de aniversário */
+    .card-aniversario {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .card-aniversario strong {
+        font-size: 14px;
+    }
+
+    /* Cards dos grupos */
+    .card-grupo {
+        height: 140px;
+        font-size: 22px;
+    }
+
+    .conteudo-grupo {
+        left: 15px;
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    /* Bolos */
+    .bolos span {
+        font-size: 30px;
+    }
+
+    #tituloGrupo {
+        margin-bottom: 30px;
+    }
+
+    #secaoFeitos,
+    #secaoHoje {
+        margin-bottom: 40px;
+    }
+
+    /* Logos dos grupos no celular */
+    .logo-grupo {
+        width: 60px;
+        height: 60px;
+        right: 15px;
+        transform: translateY(-50%) scale(1.4);
+    }
+
+    .cabecalho-gerenciar {
+        grid-template-columns: 40px 1fr 40px;
+    }
+
+    .logo-titulo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icone-pdf {
+        width: 28px;
+        height: 28px;
+    }
+
+    #tituloGrupo {
+        font-size: 20px;
+    }
+
+    .cabecalho-grupo-tela {
+        grid-template-columns: 32px 1fr 32px;
+    }
+
+    #btnGerenciar {
+        width: 32px;
+        height: 32px;
+    }
+
+}
+
+.observacao {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #000000;
+    text-align: center;
+}
+
+.observacao-lista {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 12px;
+    color: #000000;
+    text-align: left;
+}
+
+.observacao-lista li {
+    margin-bottom: 20px;
+}
+
+.cabecalho-grupo-tela {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.cabecalho-grupo-tela h1 {
+    margin: 0;
+    text-align: center;
+}
+
+#btnGerenciar {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    justify-self: end;
+}
+
+/* ==========================
+   MODAL ADICIONAR ANIVERSARIANTE
+========================== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.janela-modal {
+    width: 85%;
+    max-width: 400px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: aparecerModal 0.3s ease;
+}
+
+.janela-modal h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #720035;
+}
+
+.janela-modal input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+}
+
+.janela-modal button {
+    margin-top: 8px;
+}
+
+#btnSalvarAdicionar {
+    background: #4caf50;
+}
+
+#btnCancelarAdicionar {
+    background: #720035;
+}
+
+@keyframes aparecerModal {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.card-novo {
+    animation: destaqueNovo 5s ease;
+}
+
+@keyframes destaqueNovo {
+
+    0% {
+        background: #4caf50;
+        transform: scale(1.05);
+    }
+
+    50% {
+        background: #81c784;
+    }
+
+    100% {
+        background: #f1f1f1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================
+   MENSAGEM DE SUCESSO
+========================== */
+.mensagem-sucesso {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 25px 35px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: aparecerSucesso 0.4s ease;
+}
+
+@keyframes aparecerSucesso {
+    from {
+        transform:
+            translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+
+
+    to {
+        transform:
+            translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ==========================
+   MENSAGEM DE AVISO
+========================== */
+.mensagem-aviso {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff9800;
+    color: white;
+    padding: 25px 35px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: aparecerAviso 0.4s ease;
+}
+
+@keyframes aparecerAviso {
+    from {
+        transform:
+            translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+
+
+    to {
+        transform:
+            translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+}
+
+.btnExcluir {
+    width: 90px;
+    padding: 8px;
+    margin-top: 0;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.dados-aniversariante {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================
+   TELA GERENCIAR
+========================== */
+
+.lista-scroll {
+    max-height: 32vh;
+    margin-top: -2vh;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.acoes-aniversariante {
+    display: flex;
+    gap: 8px;
+}
+
+.btnEditar,
+.btnExcluir {
+    width: 80px;
+    padding: 8px;
+    margin-top: 0;
+    font-size: 13px;
+}
+
+.btnEditar {
+    background: #2196f3;
+}
+
+.btnExcluir {
+    background: #cf0000;
+}
+
+.area-filtros {
+    margin-bottom: 30px;
+}
+
+.area-filtros input {
+    margin-bottom: 10px;
+}
+
+.botoes-filtro {
+    display: flex;
+    gap: 10px;
+}
+
+.botoes-filtro button {
+    width: 50%;
+    margin-top: 0;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.botoes-ordenacao {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.botoes-ordenacao button {
+    flex: 1;
+    width: auto;
+    font-size: 14px;
+}
+
+.botoes-ordenacao .btn-expandir-lista {
+    flex: 1;
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 14px;
+}
+
+
+#pesquisaAniversariante {
+    margin-top: 10px;
+}
+
+.botao-selecionado {
+    transform: scale(1.08);
+    background: #ff0080;
+    box-shadow: 0 0 12px rgba(255, 0, 128, 0.5);
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.rodape {
+    margin-top: 40px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-align: center;
+    font-size: 12px;
+    color: #2b2b2bc7;
+}
+
+#carregando {
+    text-align: center;
+    padding: 30px;
+    font-size: 16px;
+    color: #720035;
+    font-weight: bold;
+}
+
+.botao-voltar {
+    margin-bottom: 20px;
+}
+
+.btnAdicionar {
+    background: #00992e;
+}
+
+.btnConfirmarExcluir {
+    background: #ca0000;
+}
+
+.btnSalvarEditar {
+    background: #0099ff;
+}
+
+.mensagem-adicionado {
+    background: #4caf50;
+}
+
+.mensagem-editado {
+    background: #2196f3;
+}
+
+.mensagem-excluido {
+    background: #d32f2f;
+}
+
+#grupos {
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* ==========================
+   CABEÇALHO GERENCIAR
+========================== */
+
+.cabecalho-gerenciar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.cabecalho-gerenciar h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    font-size: 28px;
+}
+
+.icone-pdf {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.icone-pdf:hover {
+    transform: scale(1.15);
+}
+
+.nome-aniversariante {
+    display: flex;
+    flex-direction: column;
+}
+
+.gerar-mensagem {
+    margin-top: 4px;
+    font-size: 5px;
+    color: rgb(255, 251, 0);
+    cursor: pointer;
+    text-decoration: underline;
+
+    width: 100%;
+    text-align: center;
+}
+
+#textoMensagem {
+    width: 100%;
+    height: 220px;
+    resize: vertical;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+#hoje .card-aniversario>span:last-child {
+    margin-top: 0;
+    align-self: flex-start;
+}
+
+.cabecalho-grupo {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-titulo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.cabecalho-grupo h1 {
+    margin: 0;
+}
+
+.cabecalho-gerenciar {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.logo-titulo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    justify-self: start;
+}
+
+#tituloGrupo {
+    margin: 0;
+    text-align: center;
+    font-size: 28px;
+}
+
+.icone-pdf {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    justify-self: end;
+}
+
+.icone-config {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    justify-self: end;
+}
+
+.btn-instalar {
+    width: 30%;
+    margin: 15px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 15px;
+    white-space: nowrap;
+    background-color: rgb(0, 162, 255);
+}
+
+.campo-senha {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.campo-senha input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 50px 12px 12px;
+    margin: 0;
+}
+
+.campo-senha #btnOlho {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.campo-senha #btnOlho:hover {
+    background: transparent;
+    opacity: 0.7;
+}
+
+.campo-senha #btnOlho svg {
+    width: 22px;
+    height: 22px;
+}
+
+#mensagemErroLogin {
+    display: none;
+    color: #b71c1c;
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 12px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.botoes-gerenciar {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btnImportarNivers {
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#textoImportarNivers {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+/* =====================================================
+   VISÃO MACRO
+===================================================== */
+
+.tela-calendario {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 25px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 99999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tela-calendario>* {
+    width: 100%;
+    max-width: 700px;
+}
+
+.cabecalho-calendario {
+    display: grid;
+    grid-template-columns: 90px 1fr 90px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+}
+
+#telaCalendarioMes {
+    display: none;
+    justify-content: center;
+}
+
+#telaCalendarioMes .cabecalho-calendario,
+#telaCalendarioMes .semana-calendario,
+#telaCalendarioMes .grade-calendario {
+    width: 100%;
+    max-width: 700px;
+}
+
+.cabecalho-calendario h2 {
+    text-align: center;
+    color: #720035;
+    margin: 0;
+}
+
+.btnVoltarCalendario {
+    width: auto;
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+
+.subtitulo-calendario {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    color: #555;
+    margin: 0 auto 25px auto;
+}
+
+/* =====================================================
+   CARDS DOS 12 MESES
+===================================================== */
+
+.grade-meses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.card-macro-mes {
+    min-height: 150px;
+    margin: 0;
+    padding: 15px;
+    background: #f1f1f1;
+    color: #720035;
+    border-radius: 15px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease;
+}
+
+.card-macro-mes:hover {
+    transform: scale(1.04);
+    border-color: #ff0080;
+    background: #fff0f7;
+}
+
+.nome-mes-macro {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.numero-mes-macro {
+    font-size: 48px;
+    line-height: 1;
+    margin: 12px 0 5px;
+    color: #ff0080;
+}
+
+.texto-nivers-macro {
+    font-size: 13px;
+    color: #555;
+}
+
+/* =====================================================
+   CALENDÁRIO
+===================================================== */
+
+.semana-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.semana-calendario span {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #720035;
+}
+
+
+.grade-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.dia-calendario {
+    min-height: 70px;
+    margin: 0;
+    padding: 6px;
+    background: #f3f3f3;
+    color: #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: default;
+}
+
+.dia-calendario.vazio {
+    background: transparent;
+}
+
+.numero-dia {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dia-com-aniversario {
+    background: #ff0080;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(255, 0, 128, 0.25);
+}
+
+
+.dia-com-aniversario:hover {
+    transform: scale(1.05);
+    background: #e60073;
+}
+
+.indicador-aniversario {
+    font-size: 11px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+/* =====================================================
+   LISTA DO DIA
+===================================================== */
+
+.item-aniversariante-macro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f1f1f1;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    color: #333;
+}
+
+.item-aniversariante-macro span {
+    font-size: 20px;
+}
+
+
+.item-aniversariante-macro strong {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/* =====================================================
+   BOTÃO VISÃO MACRO
+===================================================== */
+
+.btnVisaoMacro {
+    background: #720035;
+    margin-bottom: 10px;
+}
+
+/* =====================================================
+   RESPONSIVIDADE DA VISÃO MACRO
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .tela-calendario {
+        width: 100vw;
+        height: 100dvh;
+        max-height: none;
+        padding: 20px;
+    }
+
+    .grade-meses {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .card-macro-mes {
+        min-height: 130px;
+        padding: 10px;
+    }
+
+    .nome-mes-macro {
+        font-size: 16px;
+    }
+
+    .numero-mes-macro {
+        font-size: 38px;
+    }
+
+    .texto-nivers-macro {
+        font-size: 11px;
+    }
+
+    .cabecalho-calendario {
+        grid-template-columns: 70px 1fr 70px;
+    }
+
+    .cabecalho-calendario h2 {
+        font-size: 18px;
+    }
+
+    .btnVoltarCalendario {
+        font-size: 11px;
+        padding: 7px;
+    }
+
+    .dia-calendario {
+        min-height: 55px;
+        padding: 5px 2px;
+    }
+
+    .numero-dia {
+        font-size: 14px;
+    }
+
+    .indicador-aniversario {
+        font-size: 9px;
+    }
+
+    .semana-calendario span {
+        font-size: 9px;
+    }
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 10px;
+}
+
+#telaVisaoMacro {
+    max-height: none;
+    overflow-y: auto;
+    justify-content: center;
+}
+
+#telaVisaoMacro .grade-meses {
+    max-height: calc(100dvh - 130px);
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Animação da tela ao abrir o teclado na pesquisa */
+.container {
+    transition: transform 0.35s ease;
+}
+
+/* =====================================================
+   LISTA EXPANSÍVEL
+   ===================================================== */
+
+.lista-container-expandivel {
+    position: relative;
+    margin-top: 10px;
+
+}
+
+.btn-expandir-lista {
+    position: static;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 8px;
+    background: rgba(223, 3, 105, 0.9);
+    color: white;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.btn-expandir-lista:hover {
+    transform: scale(1.08);
+}
+
+/* =====================================================
+   LISTA EXPANDIDA
+   ===================================================== */
+
+.lista-container-expandivel.lista-expandida {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.lista-container-expandivel.lista-expandida .lista-scroll {
+    max-height: none;
+    height: 100%;
+    flex: 1;
+    margin-top: 0;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Botão no modo expandido */
+
+.lista-container-expandivel.lista-expandida .btn-expandir-lista {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px
+}
+
+/* =====================================================
+   BOTÕES DA LISTA EXPANDIDA
+===================================================== */
+
+.botoes-expansao {
+    position: relative;
+}
+
+/* Esconde os botões de ordenação extras na visão normal */
+.botoes-expansao #btnOrdenarNomeExpandido,
+.botoes-expansao #btnOrdenarDataExpandido {
+    display: none;
+}
+
+/* Na visão expandida, coloca os 3 botões na mesma linha */
+.lista-container-expandivel.lista-expandida .botoes-expansao {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Botões de ordenação da visão expandida */
+.lista-container-expandivel.lista-expandida .botoes-expansao #btnOrdenarNomeExpandido,
+.lista-container-expandivel.lista-expandida .botoes-expansao #btnOrdenarDataExpandido {
+    display: block;
+    flex: 1;
+    width: auto;
+    margin-top: 0;
+    font-size: 14px;
+}
+
+/* Botão ↙ dentro da mesma linha */
+.lista-container-expandivel.lista-expandida .botoes-expansao .btn-expandir-lista {
+    position: static;
+    top: auto;
+    right: auto;
+    flex: 1;
+    width: auto;
+    height: auto;
+    padding: 12px;
+    margin-top: 0;
+    font-size: 14px;
+}
+
+/* Esconde os botões inferiores quando a lista está expandida */
+.lista-container-expandivel.lista-expandida .botoes-gerenciar,
+.lista-container-expandivel.lista-expandida #btnVoltar {
+    display: none;
+}
+
+/* =====================================================
+   DESTAQUE DOS BOTÕES NA LISTA EXPANDIDA
+===================================================== */
+
+.lista-container-expandivel.lista-expandida .botoes-expansao button.botao-selecionado {
+    background: #df0369;
+    color: white;
+    transform: scale(1.02);
+}
+
+#modalDiaMacro {
+    z-index: 100000;
+}
+

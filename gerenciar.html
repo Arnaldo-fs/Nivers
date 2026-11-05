@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivers - Gerenciar</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- TÍTULO -->
+        <div class="cabecalho-gerenciar">
+            <img id="logoGrupo" class="logo-titulo">
+            <h1 id="tituloGrupo"></h1>
+            <img src="image/pdf.png" id="btnExportarPDF" class="icone-pdf">
+        </div>
+
+        <div class="area-filtros">
+            <button id="btnVisaoMacro" class="btnVisaoMacro">
+                Visão Macro
+            </button>
+
+            <input id="pesquisaAniversariante" placeholder="🔎 Pesquisar aniversariante">
+
+            <div class="botoes-ordenacao">
+                <button id="btnOrdenarNome">
+                    Ordem alfabética
+                </button>
+
+                <button id="btnOrdenarData">
+                    Data aniversário
+                </button>
+
+                <button id="btnExpandirLista" class="btn-expandir-lista" title="Expandir lista">
+                    Expandir lista
+                </button>
+            </div>
+        </div>
+
+        <div id="carregando">
+            Carregando lista...
+        </div>
+        <!-- LISTA COM ROLAGEM -->
+
+        <div class="lista-container-expandivel">
+
+            <div class="botoes-expansao">
+
+                <button id="btnOrdenarNomeExpandido">
+                    Ordem alfabética
+                </button>
+
+                <button id="btnOrdenarDataExpandido">
+                    Data aniversário
+                </button>
+
+            </div>
+
+            <div id="listaAniversariantes" class="lista-scroll">
+
+            </div>
+
+
+
+            <!-- BOTÕES FIXOS -->
+
+            <div class="botoes-gerenciar">
+
+                <button id="btnAdicionar" class="btnAdicionar">
+                    ➕ Adicionar
+                </button>
+
+                <button id="btnImportarNivers" class="btnImportarNivers">
+                    Importar Nivers ➕
+                </button>
+
+            </div>
+
+            <button id="btnVoltar">
+                Voltar
+            </button>
+        </div>
+
+        <!-- ==============================
+     VISÃO MACRO
+============================== -->
+
+        <div id="telaVisaoMacro" class="tela-calendario">
+
+            <div class="cabecalho-calendario">
+
+                <button id="btnVoltarMacro" class="btnVoltarCalendario">
+                    ← Voltar
+                </button>
+
+                <h2>📊 Visão Macro</h2>
+
+                <div></div>
+
+            </div>
+
+            <p id="subtituloMacro" class="subtitulo-calendario"></p>
+
+            <div id="gradeMeses" class="grade-meses"></div>
+
+        </div>
+
+
+        <!-- ==============================
+     CALENDÁRIO DO MÊS
+============================== -->
+
+        <div id="telaCalendarioMes" class="tela-calendario">
+
+            <div class="cabecalho-calendario">
+
+                <button id="btnVoltarMes" class="btnVoltarCalendario">
+                    ← Meses
+                </button>
+
+                <h2 id="tituloMesCalendario"></h2>
+
+                <div></div>
+
+            </div>
+
+            <div class="semana-calendario">
+                <span>DOM</span>
+                <span>SEG</span>
+                <span>TER</span>
+                <span>QUA</span>
+                <span>QUI</span>
+                <span>SEX</span>
+                <span>SÁB</span>
+            </div>
+
+            <div id="gradeCalendario" class="grade-calendario"></div>
+
+        </div>
+
+
+        <!-- ==============================
+     MODAL DO DIA
+============================== -->
+
+        <div id="modalDiaMacro" class="modal">
+
+            <div class="janela-modal">
+
+                <h2 id="tituloDiaMacro">
+                    🎂 Aniversariantes
+                </h2>
+
+                <div id="listaDiaMacro"></div>
+
+                <button id="btnFecharDiaMacro">
+                    Fechar
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MODAL ADICIONAR ANIVERSARIANTE -->
+
+        <div id="modalAdicionar" class="modal">
+
+            <div class="janela-modal">
+                <h2>
+                    Adicionar Aniversariante 🎂
+                </h2>
+
+                <input id="nomeAdicionar" placeholder="Nome completo">
+                <input id="diaAdicionar" type="number" placeholder="Dia">
+                <input id="mesAdicionar" type="number" placeholder="Mês">
+                <button id="btnSalvarAdicionar">
+                    Pronto
+                </button>
+
+                <button id="btnCancelarAdicionar">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+
+        <!-- MODAL IMPORTAR NIVERS -->
+
+        <div id="modalImportarNivers" class="modal">
+
+            <div class="janela-modal">
+
+                <h2>
+                    Importar Nivers 📋
+                </h2>
+
+                <!-- ÁREA PARA COLAR A LISTA -->
+
+                <div id="areaTextoImportacao">
+
+                    <p>
+                        Cole abaixo a lista de aniversariantes:
+                    </p>
+
+                    <textarea id="textoImportarNivers" placeholder="Cole aqui a lista completa..." rows="12">
+            </textarea>
+
+                    <button id="btnAnalisarNivers" class="btnImportarNivers">
+                        Analisar Lista 🔎
+                    </button>
+
+                    <button id="btnCancelarImportacao">
+                        Cancelar
+                    </button>
+
+                </div>
+
+                <!-- ÁREA DA PRÉVIA -->
+
+                <div id="areaPreviaImportacao" style="display: none;">
+
+                    <h3 id="tituloPreviaImportacao">
+                        Nivers encontrados
+                    </h3>
+
+                    <div id="listaPreviaImportacao">
+                    </div>
+
+                    <button id="btnConfirmarImportacao" class="btnImportarNivers">
+                        Confirmar importação
+                    </button>
+
+                    <button id="btnVoltarPrevia">
+                        Voltar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MODAL EDITAR ANIVERSARIANTE -->
+
+        <div id="modalEditar" class="modal">
+
+            <div class="janela-modal">
+                <h2>
+                    Editar aniversariante
+                </h2>
+
+                <input id="nomeEditar" placeholder="Nome completo">
+                <input id="diaEditar" type="number" placeholder="Dia">
+                <input id="mesEditar" type="number" placeholder="Mês">
+                <button id="btnSalvarEditar" class="btnSalvarEditar">
+                    Salvar
+                </button>
+
+                <button id="btnCancelarEditar">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+
+
+        <!-- MODAL DUPLICIDADE -->
+
+        <div id="modalDuplicidade" class="modal">
+            <div class="janela-modal">
+
+                <h2>
+                    ⚠️ Possível duplicidade
+                </h2>
+
+                <p id="textoDuplicidade">
+                </p>
+
+                <button id="btnAdicionarGrupo">
+                    Adicionar também ao grupo
+                </button>
+
+                <button id="btnNovaPessoa">
+                    Cadastrar como nova pessoa
+                </button>
+
+                <button id="btnCancelarDuplicidade">
+                    Cancelar
+                </button>
+            </div>
+
+        </div>
+
+        <div id="modalExcluir" class="modal">
+
+            <div class="janela-modal">
+                <h2>
+                    ⚠️ Confirmar exclusão
+                </h2>
+
+                <p id="textoExcluir">
+                </p>
+
+                <button id="btnConfirmarExcluir" class="btnConfirmarExcluir">
+                    🗑️ Excluir
+                </button>
+
+                <button id="btnCancelarExcluir">
+                    Cancelar
+                </button>
+            </div>
+
+        </div>
+        <div id="mensagemSucesso" class="mensagem-sucesso">
+            🎉 Aniversariante adicionado!
+        </div>
+
+        <div id="mensagemAviso" class="mensagem-aviso">
+            ⚠️ Preencha todos os campos!
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script type="module" src="gerenciar.js"></script>
+
+</body>
+
+</html>
