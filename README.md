@@ -8,27 +8,33 @@ O projeto surgiu de uma necessidade real na minha igreja, onde cada departamento
 ### Login
 
 <!-- Coloque a imagem em docs/screenshots/login.png -->
-![Tela de login](docs/screenshots/login.png)
+![Tela de login](docs/screenshots/login.jpeg)
 
 ### Página inicial e grupos
 
 <!-- Coloque a imagem em docs/screenshots/inicio-grupos.png -->
-![Página inicial e seleção de grupos](docs/screenshots/inicio-grupos.png)
+![Página inicial e seleção de grupos](docs/screenshots/inicio-grupos.jpeg)
 
 ### Aniversários do grupo
 
 <!-- Coloque a imagem em docs/screenshots/aniversarios-grupo.png -->
-![Aniversários do grupo](docs/screenshots/aniversarios-grupo.png)
+![Aniversários do grupo](docs/screenshots/aniversarios-grupo.jpeg)
 
 ### Gerenciamento
 
 <!-- Coloque a imagem em docs/screenshots/gerenciamento.png -->
-![Gerenciamento de aniversariantes](docs/screenshots/gerenciamento.png)
+![Gerenciamento de aniversariantes](docs/screenshots/gerenciamento.jpeg)
 
 ### Calendário e visão macro
 
 <!-- Coloque a imagem em docs/screenshots/calendario.png -->
-![Calendário e visão macro](docs/screenshots/calendario.png)
+![Calendário e visão macro](docs/screenshots/visao-macro.jpeg) 
+
+<!-- Coloque a imagem em docs/screenshots/calendario.png -->
+![Calendário e visão macro](docs/screenshots/calendario-dias.jpeg) 
+
+<!-- Coloque a imagem em docs/screenshots/calendario.png -->
+![Calendário e visão macro](docs/screenshots/calendario-pessoas.jpeg) 
 
 ## ✨ Funcionalidades
 
