@@ -2,39 +2,38 @@
 
 O **Nivers** é um aplicativo web desenvolvido para facilitar a consulta e o gerenciamento de aniversários em grupos. A plataforma permite organizar aniversariantes por grupos, visualizar os aniversários do mês, cadastrar e importar listas de pessoas, além de enviar notificações automáticas nos dias de aniversário.
 
-O projeto surgiu de uma necessidade real na minha igreja, onde cada departamento possui uma pessoa responsável por acompanhar os aniversários de seus integrantes e parabenizá-los na data correspondente. A proposta foi centralizar essas informações em uma única plataforma, simplificando a organização, evitando esquecimentos e tornando esse acompanhamento mais prático e eficiente.
+O projeto surgiu de uma necessidade real na minha igreja, onde cada departamento possui uma pessoa responsável por acompanhar os aniversários de seus integrantes e parabenizá-los na data correspondente. A proposta foi centralizar essas informações em uma única plataforma, simplificando a organização, evitando esquecimentos e tornando esse acompanhamento mais prático e eficiente. Cada pessoa com um login consegue ver todos os grupos da igreja, mas só tem acesso ao que ela administra (aperece no topo).
+
 ## 📸 Capturas de tela
 
-### Login
+As imagens abaixo apresentam algumas das principais telas e funcionalidades do Nivers.
 
-<!-- Coloque a imagem em docs/screenshots/login.png -->
-![Tela de login](docs/screenshots/login.jpeg)
-
-### Página inicial e grupos
-
-<!-- Coloque a imagem em docs/screenshots/inicio-grupos.png -->
-![Página inicial e seleção de grupos](docs/screenshots/inicio-grupos.jpeg)
-
-### Aniversários do grupo
-
-<!-- Coloque a imagem em docs/screenshots/aniversarios-grupo.png -->
-![Aniversários do grupo](docs/screenshots/aniversarios-grupo.jpeg)
-
-### Gerenciamento
-
-<!-- Coloque a imagem em docs/screenshots/gerenciamento.png -->
-![Gerenciamento de aniversariantes](docs/screenshots/gerenciamento.jpeg)
-
-### Calendário e visão macro
-
-<!-- Coloque a imagem em docs/screenshots/calendario.png -->
-![Calendário e visão macro](docs/screenshots/visao-macro.jpeg) 
-
-<!-- Coloque a imagem em docs/screenshots/calendario.png -->
-![Calendário e visão macro](docs/screenshots/calendario-dias.jpeg) 
-
-<!-- Coloque a imagem em docs/screenshots/calendario.png -->
-![Calendário e visão macro](docs/screenshots/calendario-pessoas.jpeg) 
+<table>
+  <tr>
+    <td align="center"><strong>Login</strong></td>
+    <td align="center"><strong>Página inicial</strong></td>
+    <td align="center"><strong>Aniversários</strong></td>
+    <td align="center"><strong>Gerenciamento</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/login.jpeg" width="300"></td>
+    <td align="center"><img src="docs/screenshots/inicio-grupos.jpeg" width="300"></td>
+    <td align="center"><img src="docs/screenshots/aniversarios-grupo.jpeg" width="300"></td>
+    <td align="center"><img src="docs/screenshots/gerenciamento.jpeg" width="300"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Visão macro anual</strong></td>
+    <td align="center"><strong>Calendário mensal</strong></td>
+    <td align="center"><strong>Aniversários por data</strong></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/visao-macro.jpeg" width="300"></td>
+    <td align="center"><img src="docs/screenshots/calendario-dias.jpeg" width="300"></td>
+    <td align="center"><img src="docs/screenshots/calendario-pessoas.jpeg" width="300"></td>
+    <td></td>
+  </tr>
+</table>
 
 ## ✨ Funcionalidades
 
