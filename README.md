@@ -2,7 +2,9 @@
 
 O **Nivers** é um aplicativo web desenvolvido para facilitar a consulta e o gerenciamento de aniversários em grupos. A plataforma permite organizar aniversariantes por grupos, visualizar os aniversários do mês, cadastrar e importar listas de pessoas, além de enviar notificações automáticas nos dias de aniversário.
 
-O projeto surgiu de uma necessidade real na minha igreja, onde cada departamento possui uma pessoa responsável por acompanhar os aniversários de seus integrantes e parabenizá-los na data correspondente. A proposta foi centralizar essas informações em uma única plataforma, simplificando a organização, evitando esquecimentos e tornando esse acompanhamento mais prático e eficiente. Cada pessoa com um login consegue visualizar todos os grupos da igreja, mas só tem acesso ao gerenciamento dos grupos que administra.
+O projeto surgiu de uma necessidade real na minha igreja, onde cada departamento possui uma pessoa responsável por acompanhar os aniversários de seus integrantes e parabenizá-los na data correspondente. A proposta foi centralizar essas informações em uma única plataforma, simplificando a organização, evitando esquecimentos e tornando esse acompanhamento mais prático e eficiente.
+
+Cada pessoa possui seu próprio login e consegue visualizar todos os grupos da igreja, mas só pode acessar e gerenciar os grupos para os quais possui autorização.
 
 ## 📸 Capturas de tela
 
@@ -25,15 +27,11 @@ As imagens abaixo apresentam algumas das principais telas e funcionalidades do N
     <td align="center"><strong>Visão macro anual</strong></td>
     <td align="center"><strong>Calendário mensal</strong></td>
     <td align="center"><strong>Aniversários por data</strong></td>
-    <td align="center"><strong>🎬 Demonstração</strong></td>
   </tr>
   <tr>
     <td align="center"><img src="docs/screenshots/visao-macro.jpeg" width="300"></td>
     <td align="center"><img src="docs/screenshots/calendario-dias.jpeg" width="300"></td>
     <td align="center"><img src="docs/screenshots/calendario-pessoas.jpeg" width="300"></td>
-    <td align="center">
-      <video src="docs/screenshots/demo.mp4" controls width="300"></video>
-    </td>
   </tr>
 </table>
 
@@ -85,6 +83,8 @@ A função agendada `enviarAniversarios`, em `functions/index.js`, consulta os a
 ├── style.css                  # Estilos e responsividade
 ├── image/                     # Imagens e logotipos
 ├── audio/                     # Áudios dos grupos
+├── docs/
+│   └── screenshots/           # Capturas de tela do aplicativo
 └── functions/
     └── index.js               # Função agendada de notificações
 ```
