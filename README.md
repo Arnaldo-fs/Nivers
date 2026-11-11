@@ -15,23 +15,26 @@ As imagens abaixo apresentam algumas das principais telas e funcionalidades do N
     <td align="center"><strong>Login</strong></td>
     <td align="center"><strong>Página inicial</strong></td>
     <td align="center"><strong>Aniversários</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/login.jpeg" height="700" style="object-fit: contain;"></td>
+    <td align="center"><img src="docs/screenshots/inicio-grupos.jpeg" height="700" style="object-fit: contain;"></td>
+    <td align="center"><img src="docs/screenshots/aniversarios-grupo.jpeg" height="700" style="object-fit: contain;"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
     <td align="center"><strong>Gerenciamento</strong></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/screenshots/login.jpeg" width="300"></td>
-    <td align="center"><img src="docs/screenshots/inicio-grupos.jpeg" width="300"></td>
-    <td align="center"><img src="docs/screenshots/aniversarios-grupo.jpeg" width="300"></td>
-    <td align="center"><img src="docs/screenshots/gerenciamento.jpeg" width="300"></td>
-  </tr>
-  <tr>
     <td align="center"><strong>Visão macro anual</strong></td>
     <td align="center"><strong>Calendário mensal</strong></td>
     <td align="center"><strong>Aniversários por data</strong></td>
   </tr>
   <tr>
-    <td align="center"><img src="docs/screenshots/visao-macro.jpeg" width="300"></td>
-    <td align="center"><img src="docs/screenshots/calendario-dias.jpeg" width="300"></td>
-    <td align="center"><img src="docs/screenshots/calendario-pessoas.jpeg" width="300"></td>
+    <td align="center"><img src="docs/screenshots/gerenciamento.jpeg" height="700" style="object-fit: contain;"></td>
+    <td align="center"><img src="docs/screenshots/visao-macro.jpeg" height="700" style="object-fit: contain;"></td>
+    <td align="center"><img src="docs/screenshots/calendario-dias.jpeg" height="700" style="object-fit: contain;"></td>
+    <td align="center"><img src="docs/screenshots/calendario-pessoas.jpeg" height="700" style="object-fit: contain;"></td>
   </tr>
 </table>
 
